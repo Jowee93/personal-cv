@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -16,6 +17,15 @@ const useStyles = makeStyles(theme => ({
   },
   navbar: {
     backgroundColor: "black"
+  },
+  navbarWrapper: {
+    display: "flex",
+    justifyContent: "space-between"
+  },
+  navbarSection: {
+    flexGrow: 0.3,
+    display: "flex",
+    justifyContent: "space-between"
   }
 }));
 
@@ -25,7 +35,7 @@ export default function NavbarCorporate() {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.navbar}>
-        <Toolbar>
+        <Toolbar className={classes.navbarWrapper}>
           <Typography
             component={Link}
             to="/"
@@ -35,6 +45,20 @@ export default function NavbarCorporate() {
           >
             Jo Wee
           </Typography>
+          <Box className={classes.navbarSection}>
+            <Typography variant="h6" className={classes.title} color="inherit">
+              Experience
+            </Typography>
+            <Typography variant="h6" className={classes.title} color="inherit">
+              Education
+            </Typography>
+            <Typography variant="h6" className={classes.title} color="inherit">
+              Skills
+            </Typography>
+            <Typography variant="h6" className={classes.title} color="inherit">
+              Contact
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>
