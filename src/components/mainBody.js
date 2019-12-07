@@ -5,7 +5,16 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import {
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeProvider
+} from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import dog from "../components/dog-portrait.jpg";
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     alignItems: "center",
     color: theme.palette.text.secondary,
-    height: "85vh",
+    height: "90vh",
     fontFamily: "Alegreya SC, serif"
   },
   paperLeft: {
@@ -39,20 +48,19 @@ const useStyles = makeStyles(theme => ({
   },
   box: {
     fontSize: "100%",
-    border: "1px solid black",
     position: "absolute",
     top: 165,
     width: "30vw"
   },
   button: {
-    // top: "65vh",
     fontFamily: "Alegreya SC, serif"
   },
-  slogan: {
-    fontFamily: "Alegreya SC, serif"
+  text: {
+    fontFamily: "Alegreya SC, serif",
+    color: "white"
   },
   textbox: {
-    width: "20vw"
+    width: "40vw"
   }
 }));
 
@@ -65,21 +73,33 @@ export default function MainBody() {
         <Grid item xs={6}>
           <Paper className={`${classes.paper} ${classes.paperLeft}`}>
             <Box component="div">
-              <h2 style={{ color: "white" }}>CORPORATE</h2>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h3" className={classes.text}>
+                  CORPORATE
+                </Typography>
+              </ThemeProvider>
             </Box>
             <Box component="div" className={classes.textbox}>
-              <Typography style={{ color: "white" }}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aperiam sunt non, fugit dolor laborum
-              </Typography>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h6" className={classes.text}>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Aperiam sunt non, fugit dolor laborum
+                </Typography>
+              </ThemeProvider>
             </Box>
             <Box component="div">
               <Button
+                component={Link}
+                to="/corporate"
                 variant="contained"
                 color="primary"
                 className={classes.button}
               >
-                Get Started
+                <ThemeProvider theme={theme}>
+                  <Typography variant="h6" className={classes.text}>
+                    Get Started
+                  </Typography>
+                </ThemeProvider>
               </Button>
             </Box>
           </Paper>
@@ -87,34 +107,44 @@ export default function MainBody() {
         <Grid item xs={6}>
           <Paper className={`${classes.paper} ${classes.paperRight} img-fluid`}>
             <Box component="div">
-              <h2 style={{ color: "white" }}>CREATIVE</h2>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h3" className={classes.text}>
+                  CREATIVE
+                </Typography>
+              </ThemeProvider>
             </Box>
             <Box component="div" className={classes.textbox}>
-              <Typography style={{ color: "white" }}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aperiam sunt non, fugit dolor laborum
-              </Typography>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h6" className={classes.text}>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Aperiam sunt non, fugit dolor laborum
+                </Typography>
+              </ThemeProvider>
             </Box>
             <Box component="div">
               <Button
+                component={Link}
+                to="/creative"
                 variant="contained"
                 color="primary"
                 className={classes.button}
               >
-                Get Started
+                <ThemeProvider theme={theme}>
+                  <Typography variant="h6" className={classes.text}>
+                    Get Started
+                  </Typography>
+                </ThemeProvider>
               </Button>
             </Box>
           </Paper>
         </Grid>
       </Grid>
       <Box className={classes.box} component="div">
-        <Typography
-          style={{ color: "white" }}
-          variant="h6"
-          className={classes.slogan}
-        >
-          I Believe In Perspective
-        </Typography>
+        <ThemeProvider theme={theme}>
+          <Typography className={classes.text} variant="h4">
+            I Believe In Perspective
+          </Typography>
+        </ThemeProvider>
       </Box>
     </div>
   );

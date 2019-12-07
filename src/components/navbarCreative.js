@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -11,21 +12,27 @@ const useStyles = makeStyles(theme => ({
   title: {
     display: "flex",
     justifyContent: "flex-start",
-    fontFamily: "Alegreya SC, serif"
+    fontFamily: "Alegreya SC, serif",
+    color: "black"
   },
   navbar: {
-    backgroundColor: "black"
+    backgroundColor: "white"
   }
 }));
 
-export default function Navbar() {
+export default function NavbarCreative() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
-          <Typography variant="h5" className={classes.title} color="inherit">
+          <Typography
+            component={Link}
+            to="/"
+            variant="h5"
+            className={classes.title}
+          >
             Jo Wee
           </Typography>
         </Toolbar>
