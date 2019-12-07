@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0),
     color: theme.palette.text.secondary,
     whiteSpace: "nowrap",
-    height: "30vh",
+    height: "40vh",
     backgroundImage: `url(${dog})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0),
     color: theme.palette.text.secondary,
     whiteSpace: "nowrap",
-    height: "30vh"
+    height: "40vh"
   },
   cardText: {
     margin: theme.spacing(6)

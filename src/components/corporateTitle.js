@@ -7,10 +7,10 @@ import buildingImage from "../components/building-bg.jpg";
 const useStyle = makeStyles(theme => ({
   root: {
     height: "25vh",
+    width: "100vw",
     backgroundImage: `url(${buildingImage})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
-    backgroundAttachment: "fixed",
+    backgroundSize: "cover",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
