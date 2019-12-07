@@ -1,9 +1,12 @@
 @import "./base";
 
 .CorporatePage {
-  text-align: $text-center;
   height: $page-height;
-  background-color: black;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 32, 33, 1) 0%,
+    rgba(124, 118, 118, 1) 100%
+  );
 
   h1 {
     margin: 0;
