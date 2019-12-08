@@ -33,7 +33,7 @@ export default function MyJourneyCorporate() {
         <Grid item xs={12}>
           <ThemeProvider theme={theme}>
             <Typography variant="h3" className={classes.title}>
-              My Journey
+              MY JOURNEY
             </Typography>
           </ThemeProvider>
         </Grid>
